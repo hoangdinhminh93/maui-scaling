@@ -28,12 +28,17 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="16">
+                <Button
+                    Text="Open dialog"
+                    Clicked="OnOpenDialogClicked"
+                    HorizontalOptions="Center" />
+                <Button
+                    Text="Sample page"
+                    Clicked="OnOpenSamplePageClicked"
+                    HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+            
 
         </VerticalStackLayout>
     </ScrollView>

@@ -13,6 +13,12 @@ public class MainActivity : MauiAppCompatActivity
 
     protected override void AttachBaseContext(Context @base)
     {
+        if (!App.UseMagickScale)
+        {
+            base.AttachBaseContext(@base);
+            return;
+        }
+
         var displayMetrics = @base.Resources.DisplayMetrics;
         _expectedDensity = Math.Min(displayMetrics.WidthPixels, displayMetrics.HeightPixels) / App.ExpectedWidth;
 
@@ -33,6 +39,8 @@ public class MainActivity : MauiAppCompatActivity
 
     private void AdjustDensity(Context targetContext = null)
     {
+        if (!App.UseMagickScale) return;
+
         targetContext = targetContext ?? BaseContext;
         if (targetContext == null) return;
 
