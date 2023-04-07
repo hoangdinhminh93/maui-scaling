@@ -47,11 +47,6 @@ public class MainActivity : MauiAppCompatActivity
         var adjustedDisplayMetrics = targetContext.Resources.DisplayMetrics;
         var needUpdate = false;
 
-        if (!targetContext.Resources.Configuration.FontScale.IsEqualTo(_expectedDensity / targetContext.Resources.DisplayMetrics.Density))
-        {
-            targetContext.Resources.Configuration.FontScale = _expectedDensity / targetContext.Resources.DisplayMetrics.Density;
-            needUpdate = true;
-        }
         if (!adjustedDisplayMetrics.Density.IsEqualTo(_expectedDensity))
         {
             adjustedDisplayMetrics.Density = _expectedDensity;
